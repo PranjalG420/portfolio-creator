@@ -21,6 +21,8 @@ a {
 
 * {
   box-sizing: border-box;
+  font-family: Kanit, sans-serif;
+
 }
 
 @media (prefers-color-scheme: dark) {

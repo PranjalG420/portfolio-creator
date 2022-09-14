@@ -21,7 +21,8 @@ export const getServerSideProps: GetServerSideProps = async ({ req }) => {
     console.log(req.url);
     const url = new URL(req.url);
     const code = url.searchParams.get("code");
-    const message = url.searchParams.get("message");
+    const message =
+        url.searchParams.get("error") || url.searchParams.get("message");
 
     if (code && message) {
         return {

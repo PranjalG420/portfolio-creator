@@ -13,7 +13,7 @@ export default function PageNotFound() {
                     href="/"
                     className="bg-blue-700 px-4 py-2 rounded text-3xl mt-7 font-semibold hover:bg-slate-300 hover:text-black transition-colors"
                 >
-                    Go Home{" "}
+                    Go Home
                 </a>
             </div>
         </>

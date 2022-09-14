@@ -1,5 +1,4 @@
 import NextAuth from "next-auth";
-import GithubProvider from "next-auth/providers/github";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { PrismaClient } from "@prisma/client";
 import { compare } from "bcrypt";
@@ -12,11 +11,12 @@ export default NextAuth({
         },
     },
 
+    pages: {
+        signIn: "/login",
+        error: "/error?code=401",
+    },
+
     providers: [
-        GithubProvider({
-            clientId: process.env.GITHUB_ID,
-            clientSecret: process.env.GITHUB_SECRET,
-        }),
         CredentialsProvider({
             name: "Credentials",
             credentials: {
@@ -27,6 +27,7 @@ export default NextAuth({
                 },
                 password: { label: "Password", type: "password" },
             },
+
             async authorize(credentials, req) {
                 const prisma = new PrismaClient();
                 const user = await prisma.user.findUnique({
