@@ -41,8 +41,7 @@ export default function Register() {
                     </div>
                     <div>
                         <select
-                            defaultValue="white"
-                            name="pets"
+                            defaultValue="light"
                             onChange={(e) => {
                                 setTheme(e.target.value);
                             }}
@@ -50,8 +49,8 @@ export default function Register() {
                             <option disabled>
                                 --Please choose an option--
                             </option>
-                            <option value="white">White</option>
-                            <option value="black">Black</option>
+                            <option value="light">Light</option>
+                            <option value="dark">Dark</option>
                         </select>
                     </div>
                     <div>
