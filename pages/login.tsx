@@ -82,21 +82,31 @@ export default function SignIn({ csrfToken }) {
         <form
             method="post"
             action="/api/auth/callback/credentials"
-            className="text-2xl flex flex-col items-center mt-20 bg-zinc-900 py-20 rounded"
+            className="text-2xl flex flex-col items-center mt-20 bg-zinc-900 py-20 rounded-3xl mx-[36.5%]"
         >
             <input name="csrfToken" type="hidden" defaultValue={csrfToken} />
-            <p className="mb-10 font-bold">Sign Up</p>
+            <p className="mb-10 font-bold text-3xl">Sign In</p>
             <label className="mb-10">
-                <input name="username" type="text" placeholder="Username" />
+                <input
+                    name="username"
+                    type="text"
+                    placeholder="Username"
+                    className="px-2 py-1 rounded"
+                />
             </label>
             <label>
-                <input name="password" type="password" placeholder="Password" />
+                <input
+                    name="password"
+                    type="password"
+                    placeholder="Password"
+                    className="px-2 py-1 rounded mb-10"
+                />
             </label>
             <button
                 type="submit"
-                className="px-4 py-2 bg-blue-700 mt-10 rounded "
+                className="px-4 py-2 bg-blue-700 font-semibold rounded hover:bg-slate-300 hover:text-black transition-colors"
             >
-                Sign in
+                Submit
             </button>
         </form>
     );
