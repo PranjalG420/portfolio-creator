@@ -1,5 +1,6 @@
 import "../styles/globals.css";
 import Navbar from "../components/navbar";
+import Footer from "../components/footer";
 import type { AppProps } from "next/app";
 import { SessionProvider } from "next-auth/react";
 import type { Session } from "next-auth";
@@ -13,7 +14,10 @@ function MyApp(
         <SessionProvider session={props.session}>
             <div className="min-h-screen flex flex-col">
                 <Navbar user={props.user} />
-                <Component {...pageProps} />
+                <div className="flex flex-1 flex-col justify-center">
+                    <Component {...pageProps} />
+                </div>
+                <Footer />
             </div>
         </SessionProvider>
     );

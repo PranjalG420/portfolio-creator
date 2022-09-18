@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { json } from "stream/consumers";
-import { ArrowDownCircle } from "react-feather";
+import { Settings, LogIn, Home, Sun, Book, Edit } from "react-feather";
 
 export default function navbar(props) {
     const { data: session } = useSession();
@@ -11,32 +11,35 @@ export default function navbar(props) {
     }
 
     return (
-        <div className="bg-neutral-900 px-5 min-h-[75px] sticky top-0 right-0 left-0 flex justify-between items-center font-semibold md:text-xl">
-            <a
-                href="/"
-                className="px-4 py-2 bg-blue-700 rounded hover:bg-slate-300 hover:text-black transition-colors"
-            >
-                Home
-            </a>
+        <div className="drop-shadow-xl z-20 px-5 min-h-[75px] sticky top-0 right-0 left-0 flex justify-between items-center font-semibold md:text-xl">
             <div className="flex justify-between">
-                {/* <a
+                <a
                     href="/"
-                    className="px-4 py-2 rounded hover:bg-slate-300 hover:text-black transition-colors"
+                    className="px-4 py-2 rounded hover:bg-slate-300 hover:text-black transition-colors ml-10"
                 >
-                    About
+                    <Home strokeWidth={3} size={30} />
                 </a>
                 <a
                     href="/"
-                    className="px-4 py-2 rounded hover:bg-slate-300 hover:text-black transition-colors"
+                    className="px-4 py-2 rounded hover:bg-slate-300 hover:text-black transition-colors ml-5"
                 >
-                    Contact
-                </a> */}
+                    <Edit strokeWidth={3} size={30} />
+                </a>
+                <a
+                    href="/"
+                    className="px-4 py-2 rounded hover:bg-slate-300 hover:text-black transition-colors ml-5"
+                >
+                    <Book strokeWidth={3} size={30} />
+                </a>
+            </div>
+
+            <div className="flex justify-between">
                 {(session && (
                     //This displays when logged in
                     <div className="flex items-center">
                         <p className="px-4 py-2">{session.user.name}</p>
                         <button onClick={loggedIn}>
-                            <ArrowDownCircle strokeWidth={2} size={20} />
+                            <Settings strokeWidth={2} size={20} />
                         </button>
                         <div
                             className={
@@ -63,17 +66,14 @@ export default function navbar(props) {
                 )) || (
                     //This displays when not logged in
                     <>
+                        <button className="px-4 py-2 rounded hover:bg-slate-300 hover:text-black transition-colors ">
+                            <Sun strokeWidth={3} size={30} />
+                        </button>
                         <a
                             href="/login"
-                            className="px-4 py-2 rounded hover:bg-slate-300 hover:text-black transition-colors"
+                            className="px-4 py-2 rounded hover:bg-slate-300 hover:text-black transition-colors mr-10 ml-5 "
                         >
-                            Sign in
-                        </a>
-                        <a
-                            href="/register"
-                            className="px-4 py-2 rounded hover:bg-slate-300 hover:text-black transition-colors"
-                        >
-                            Register
+                            <LogIn strokeWidth={3} size={30} />
                         </a>
                     </>
                 )}

@@ -10,7 +10,6 @@ export default NextAuth({
             return baseUrl;
         },
     },
-
     pages: {
         signIn: "/login",
         error: "/error?code=401",
