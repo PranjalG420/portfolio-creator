@@ -79,36 +79,54 @@ import { getCsrfToken } from "next-auth/react";
 
 export default function SignIn({ csrfToken }) {
     return (
-        <form
-            method="post"
-            action="/api/auth/callback/credentials"
-            className="text-2xl flex flex-col items-center mt-20 bg-zinc-900 py-20 rounded-3xl mx-[36.5%]"
-        >
-            <input name="csrfToken" type="hidden" defaultValue={csrfToken} />
-            <p className="mb-10 font-bold text-3xl">Sign In</p>
-            <label className="mb-10">
-                <input
-                    name="username"
-                    type="text"
-                    placeholder="Username"
-                    className="px-2 py-1 rounded"
-                />
-            </label>
-            <label>
-                <input
-                    name="password"
-                    type="password"
-                    placeholder="Password"
-                    className="px-2 py-1 rounded mb-10"
-                />
-            </label>
-            <button
-                type="submit"
-                className="px-4 py-2 bg-blue-700 font-semibold rounded hover:bg-slate-300 hover:text-black transition-colors"
-            >
-                Submit
-            </button>
-        </form>
+        <>
+            <div className="flex justify-around">
+                <form
+                    method="post"
+                    action="/api/auth/callback/credentials"
+                    className="text-xl flex flex-col items-center mt-10 rounded-2xl px-20 py-[60px] bg-zinc-900"
+                >
+                    <input
+                        name="csrfToken"
+                        type="hidden"
+                        defaultValue={csrfToken}
+                    />
+                    <label className="mb-5 font-bold text-3xl">Sign In</label>
+                    <label className="">
+                        <input
+                            name="username"
+                            type="text"
+                            placeholder="Username"
+                            className="px-2 py-1 rounded border-4"
+                        />
+                    </label>
+                    <label>
+                        <input
+                            name="password"
+                            type="password"
+                            placeholder="Password"
+                            className="px-2 py-1 my-5 rounded border-4"
+                        />
+                    </label>
+                    <button
+                        type="submit"
+                        className="px-4 py-2 bg-blue-700 font-semibold rounded hover:bg-slate-300 hover:text-black transition-colors"
+                    >
+                        Submit
+                    </button>
+                    <label className="text-xl text-neutral-600 italic mt-5">
+                        Don't have an account? Register{" "}
+                        <a
+                            href="/register"
+                            className="hover:text-blue-500 transition-colors underline"
+                        >
+                            here
+                        </a>
+                        {"."}
+                    </label>
+                </form>
+            </div>
+        </>
     );
 }
 

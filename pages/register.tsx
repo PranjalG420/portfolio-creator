@@ -5,10 +5,8 @@ export default function Register() {
     const [password, setPassword] = useState("");
     const [name, setName] = useState("");
     const [theme, setTheme] = useState("");
-    const [state, setState] = useState(true);
     const handleSend = async () => {
         try {
-            setState(false);
             await fetch("/api/register", {
                 method: "POST",
                 headers: {
@@ -18,7 +16,6 @@ export default function Register() {
                     name: name,
                     user: user,
                     password: password,
-                    theme: theme,
                 }),
             });
         } catch (error) {
@@ -27,36 +24,27 @@ export default function Register() {
     };
     return (
         <>
-            <h1>Register</h1>
-            {state ? (
-                <form onSubmit={handleSend}>
+            <div className="flex justify-around">
+                <form
+                    onSubmit={handleSend}
+                    className="text-xl flex flex-col items-center mt-10 rounded-2xl px-20 py-[60px] bg-zinc-900"
+                >
+                    <label className="text-3xl font-bold">Register</label>
                     <div>
                         <input
                             type="text"
-                            placeholder="name"
+                            placeholder="Name"
+                            className="px-2 py-1 rounded border-4 mt-5"
                             onChange={(e) => {
                                 setName(e.target.value);
                             }}
                         ></input>
                     </div>
                     <div>
-                        <select
-                            defaultValue="light"
-                            onChange={(e) => {
-                                setTheme(e.target.value);
-                            }}
-                        >
-                            <option disabled>
-                                --Please choose an option--
-                            </option>
-                            <option value="light">Light</option>
-                            <option value="dark">Dark</option>
-                        </select>
-                    </div>
-                    <div>
                         <input
                             type="text"
-                            placeholder="user"
+                            placeholder="Username"
+                            className="px-2 py-1 rounded border-4 mt-5"
                             onChange={(e) => {
                                 setUser(e.target.value);
                             }}
@@ -65,18 +53,31 @@ export default function Register() {
                     <div>
                         <input
                             type="password"
-                            placeholder="pass"
+                            placeholder="Password"
+                            className="px-2 py-1 rounded border-4 mt-5"
                             onChange={(e) => {
                                 setPassword(e.target.value);
                             }}
                         ></input>
                     </div>
-                    <button type="submit">Submit</button>
+                    <button
+                        type="submit"
+                        className="px-4 py-2 bg-blue-700 font-semibold rounded hover:bg-slate-300 hover:text-black transition-colors my-5"
+                    >
+                        Submit
+                    </button>
+                    <label className="text-xl text-neutral-600 italic">
+                        Already have an account? Sign in{" "}
+                        <a
+                            href="/login"
+                            className="hover:text-blue-500 transition-colors underline"
+                        >
+                            here
+                        </a>
+                        {"."}
+                    </label>
                 </form>
-            ) : (
-                "Thanks for Submitting!"
-            )}
-            <a href="/login">Login page</a>
+            </div>
         </>
     );
 }

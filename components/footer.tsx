@@ -3,7 +3,7 @@ import { GitHub, Twitter, Linkedin } from "react-feather";
 
 export default function footer() {
     return (
-        <div className="flex justify-center z-0 min-h-[75px] bottom-0 mt-20 left-0 right-0 bg-zinc-900 items-center">
+        <div className="flex justify-center relative z-0 min-h-[75px] bottom-0 mt-20 left-0 right-0 bg-zinc-900 items-center">
             <a
                 href="https://github.com/PranjalG420"
                 target="_blank"

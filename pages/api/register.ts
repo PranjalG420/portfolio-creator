@@ -18,7 +18,7 @@ export default async function handler(
                     name: req.body.name,
                     password: hashPassword,
                     email: req.body.user,
-                    theme: req.body.theme == "dark" ? Theme.DARK : Theme.LIGHT,
+                    theme: Theme.LIGHT,
                 },
             });
             res.status(201).json({ success: true });
