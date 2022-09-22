@@ -16,7 +16,7 @@ export default function navbar(props) {
                     <Home strokeWidth={3} size={30} />
                 </a>
                 <a
-                    href="/"
+                    href="/posts/react"
                     className="px-4 py-2 rounded hover:bg-slate-300 hover:text-black transition-colors ml-5"
                 >
                     <Edit strokeWidth={3} size={30} />

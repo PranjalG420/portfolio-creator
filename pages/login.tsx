@@ -80,7 +80,7 @@ import { getCsrfToken } from "next-auth/react";
 export default function SignIn({ csrfToken }) {
     return (
         <>
-            <div className="flex justify-around">
+            <div className="flex justify-around mx-10">
                 <form
                     method="post"
                     action="/api/auth/callback/credentials"

@@ -18,7 +18,12 @@
         "react": "18.2.0",
         "react-dom": "18.2.0",
         "react-feather": "^2.0.10",
-        "react-intersection-observer": "^9.4.0"
+        "react-intersection-observer": "^9.4.0",
+        "rehype-stringify": "^9.0.3",
+        "remark-frontmatter": "^4.0.1",
+        "remark-parse": "^10.0.1",
+        "remark-rehype": "^10.1.0",
+        "unified": "^10.1.2"
     },
     "devDependencies": {
         "@types/bcrypt": "^5.0.0",

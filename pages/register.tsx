@@ -24,7 +24,7 @@ export default function Register() {
     };
     return (
         <>
-            <div className="flex justify-around">
+            <div className="flex justify-around md:text-xs mx-60">
                 <form
                     onSubmit={handleSend}
                     className="text-xl flex flex-col items-center mt-10 rounded-2xl px-20 py-[60px] bg-zinc-900"
