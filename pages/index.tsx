@@ -13,7 +13,6 @@ import path from "node:path";
 
 export default function Home({ content }) {
     const { inView, ref } = useInView();
-    // console.log(inView);
 
     return (
         <>
