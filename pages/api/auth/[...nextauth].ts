@@ -9,6 +9,9 @@ export default NextAuth({
         async redirect({ url, baseUrl }) {
             return baseUrl;
         },
+        async session({ session, token, user }) {
+            return session;
+        },
     },
     pages: {
         signIn: "/login",

@@ -24,17 +24,19 @@ export default function Register() {
     };
     return (
         <>
-            <div className="flex justify-around md:text-xs mx-60">
+            <div className="flex justify-around">
                 <form
                     onSubmit={handleSend}
-                    className="text-xl flex flex-col items-center mt-10 rounded-2xl px-20 py-[60px] bg-zinc-900"
+                    className="text-xl flex flex-col items-center mt-10 rounded-2xl p-10 md:px-20 md:py-[60px] bg-zinc-900"
                 >
-                    <label className="text-3xl font-bold">Register</label>
+                    <label className="text-xl md:text-3xl font-bold">
+                        Register
+                    </label>
                     <div>
                         <input
                             type="text"
                             placeholder="Name"
-                            className="px-2 py-1 rounded border-4 mt-5"
+                            className="px-2 py-1 rounded border-4 mt-5 text-sm md:text-xl"
                             onChange={(e) => {
                                 setName(e.target.value);
                             }}
@@ -44,7 +46,7 @@ export default function Register() {
                         <input
                             type="text"
                             placeholder="Username"
-                            className="px-2 py-1 rounded border-4 mt-5"
+                            className="px-2 py-1 rounded border-4 mt-5 text-sm md:text-xl"
                             onChange={(e) => {
                                 setUser(e.target.value);
                             }}
@@ -54,7 +56,7 @@ export default function Register() {
                         <input
                             type="password"
                             placeholder="Password"
-                            className="px-2 py-1 rounded border-4 mt-5"
+                            className="px-2 py-1 rounded border-4 my-5 text-sm md:text-xl"
                             onChange={(e) => {
                                 setPassword(e.target.value);
                             }}
@@ -62,15 +64,15 @@ export default function Register() {
                     </div>
                     <button
                         type="submit"
-                        className="px-4 py-2 bg-blue-700 font-semibold rounded hover:bg-slate-300 hover:text-black transition-colors my-5"
+                        className="text-sm md:text-2xl px-4 py-2 bg-blue-700 font-semibold rounded hover:bg-slate-300 hover:text-black transition-colors"
                     >
                         Submit
                     </button>
-                    <label className="text-xl text-neutral-600 italic">
+                    <label className="text-sm md:text-xl text-neutral-600 italic mt-5">
                         Already have an account? Sign in{" "}
                         <a
                             href="/login"
-                            className="hover:text-blue-500 transition-colors underline"
+                            className="text-blue-500 transition-colors "
                         >
                             here
                         </a>
