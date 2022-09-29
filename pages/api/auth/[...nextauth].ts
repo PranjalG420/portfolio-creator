@@ -36,8 +36,8 @@ export default NextAuth({
                     where: { email: req.body.username },
                 });
                 if (user && (await compare(req.body.password, user.password))) {
-                    const { name, email } = user;
-                    return { name, theme: "white", email };
+                    const { name, email, image } = user;
+                    return { name, theme: "white", email, image };
                 }
                 return null; //Return null if user data could not be verified
             },

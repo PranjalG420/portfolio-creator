@@ -18,10 +18,11 @@ export default async function handler(
                     name: req.body.name,
                     password: hashPassword,
                     email: req.body.user,
-                    theme: Theme.LIGHT,
+                    theme: Theme.DARK,
+                    image: "https://kfg6bckb.media.zestyio.com/default-avatar.png",
                 },
             });
-            res.status(201).json({ success: true });
+            res.redirect("/login");
         } else {
             res.status(401).json({ error: "User already exists" });
         }

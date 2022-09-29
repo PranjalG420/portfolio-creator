@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 
 export default function Register() {
     const [user, setUser] = useState("");
     const [password, setPassword] = useState("");
     const [name, setName] = useState("");
-    const [theme, setTheme] = useState("");
+    const router = useRouter();
+
     const handleSend = async () => {
         try {
+            console.log("Success");
             await fetch("/api/register", {
                 method: "POST",
                 headers: {
@@ -18,6 +21,7 @@ export default function Register() {
                     password: password,
                 }),
             });
+            router.push("/login");
         } catch (error) {
             console.log(error);
         }
