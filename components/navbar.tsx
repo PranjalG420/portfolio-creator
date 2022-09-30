@@ -15,17 +15,17 @@ import {
 
 export default function navbar(props) {
     const { data: session, status } = useSession();
-    const [menu, setMenu] = useState(true);
-    function showMenu() {
-        setMenu(!menu);
-    }
+    // const [menu, setMenu] = useState(true);
+    // function showMenu() {
+    //     setMenu(!menu);
+    // }
 
     return (
-        <div className="z-20 min-h-[75px] sticky top-0 right-0 left-0 flex justify-between items-center font-semibold md:text-xl">
+        <div className="z-20 min-h-[75px] sticky top-0 right-0 left-0 flex justify-between items-center font-semibold md:text-xl opacity-75 bg-zinc-900 md:bg-transparent md:animate-navLoad">
             <div className="flex justify-between">
                 <a
                     href="/"
-                    className="px-4 py-2 rounded hover:bg-slate-300 hover:text-black transition-colors md:ml-10"
+                    className="px-4 py-2 rounded opacity-100 hover:bg-slate-300 hover:text-black transition-colors md:ml-10"
                 >
                     <Home
                         strokeWidth={3}
@@ -35,7 +35,7 @@ export default function navbar(props) {
                 </a>
                 <a
                     href="/posts/react"
-                    className="px-4 py-2 rounded hover:bg-slate-300 hover:text-black transition-colors md:ml-5"
+                    className="px-4 py-2 rounded opacity-100 hover:bg-slate-300 hover:text-black transition-colors md:ml-5"
                 >
                     <Edit
                         strokeWidth={3}
@@ -45,7 +45,7 @@ export default function navbar(props) {
                 </a>
                 <a
                     href="/about"
-                    className="px-4 py-2 rounded hover:bg-slate-300 hover:text-black transition-colors md:ml-5"
+                    className="px-4 py-2 rounded opacity-100 hover:bg-slate-300 hover:text-black transition-colors md:ml-5"
                 >
                     <Book
                         strokeWidth={3}
@@ -54,18 +54,18 @@ export default function navbar(props) {
                     />
                 </a>
             </div>
-            <div className="md:mr-14 mr-4">
+            <div className="md:mr-14 mr-4 mt-2">
                 {(session && (
                     // This displays when logged in
                     <>
-                        <button onClick={showMenu}>
+                        <a href="/user/dashboard">
                             <img
-                                src="https://kfg6bckb.media.zestyio.com/default-avatar.png"
-                                className="max-h-8 md:max-h-10 rounded-[50%]"
+                                src={session.user.image}
+                                className="max-h-8 md:max-h-10 rounded-[50%] opacity-100 "
                                 alt="user_image"
                             ></img>
-                        </button>
-                        <div
+                        </a>
+                        {/* <div
                             className={
                                 `fixed top-[60px] flex flex-col align-middle transition-all bg-neutral-700 rounded-md ` +
                                 (menu ? "right-[-100%]" : "right-0")
@@ -83,10 +83,10 @@ export default function navbar(props) {
                             >
                                 Sign Out
                             </button>
-                        </div>
+                        </div> */}
                     </>
                 )) || (
-                    <div>
+                    <>
                         <a
                             href="/login"
                             className="px-4 py-2 rounded flex hover:bg-slate-300 hover:text-black transition-colors md:mr-10"
@@ -94,10 +94,10 @@ export default function navbar(props) {
                             <LogIn
                                 strokeWidth={3}
                                 size={300}
-                                className="w-6 h-6 md:w-8 md:h-8"
+                                className="w-6 h-6 md:w-8 md:h-8 opacity-100 "
                             />
                         </a>
-                    </div>
+                    </>
                 )}
             </div>
             {/* 

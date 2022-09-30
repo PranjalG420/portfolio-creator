@@ -11,6 +11,16 @@ module.exports = {
                 serif: ["Roboto Condensed", "serif"],
                 mono: ["Roboto Mono", "monospace"],
             },
+            animation: {
+                navLoad: "navLoad 0.75s ease-in-out",
+                spin: "spin 20s linear infinite",
+            },
+            keyframes: {
+                navLoad: {
+                    "0%": { transform: "translateY(-100%)" },
+                    "100%": { transform: "translateY(0%)" },
+                },
+            },
         },
     },
     plugins: [],

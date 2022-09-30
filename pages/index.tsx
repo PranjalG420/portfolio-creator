@@ -17,9 +17,8 @@ export default function Home({ content }) {
     return (
         <>
             <span className=" group w-min ">
-                {/* Hover */}
-                {/* <h2>{`Header inside viewport ${inView}.`}</h2>
-
+                {/* Hover
+                <h2>{`Header inside viewport ${inView}.`}</h2>
                 <section className="min-h-[100vh]">
                     <p>Second text</p>
                 </section>
@@ -36,11 +35,10 @@ export default function Home({ content }) {
                         <p>First text</p>
                     </section>
                     <h2>{`Header inside viewport ${inView}.`}</h2>
-                </div> */}
-                {/* <p className="invisible relative top-[200px] group-hover:visible">
+                </div>
+                <p className="invisible relative top-[200px] group-hover:visible">
                     Text
                 </p> */}
-
                 <Container title="jope"></Container>
             </span>
         </>
