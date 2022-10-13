@@ -1,30 +1,27 @@
 import React from "react";
 import { GitHub, Twitter, Linkedin } from "react-feather";
 
+export function FooterBlock({ Icon, href }) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      className="mx-1 hover:translate-y-[2px] transition-all rounded px-2 py-2"
+    >
+      <Icon strokeWidth={2} size={300} className="w-5 h-5" />
+    </a>
+  );
+}
+
 export default function footer() {
-    return (
-        <div className="flex justify-center relative z-0 min-h-[75px] bottom-0 mt-20 left-0 right-0 bg-zinc-900 items-center">
-            <a
-                href="https://github.com/PranjalG420"
-                target="_blank"
-                className="mx-5 hover:translate-y-[2px] transition-all hover:text-gray-400 rounded px-2 py-2"
-            >
-                <GitHub strokeWidth={2} size={30} />
-            </a>
-            <a
-                href="https://twitter.com/PranjalG420"
-                target="_blank"
-                className="mx-5 hover:translate-y-[2px] transition-all hover:text-gray-400 rounded px-2 py-2"
-            >
-                <Twitter strokeWidth={2} size={30} />
-            </a>
-            <a
-                href="https://www.linkedin.com/in/pranjal-gupta-10a595224/"
-                target="_blank"
-                className="mx-5 hover:translate-y-[2px] transition-all hover:text-gray-400 rounded px-2 py-2"
-            >
-                <Linkedin strokeWidth={2} size={30} />
-            </a>
-        </div>
-    );
+  return (
+    <div className="flex flex-row fixed bottom-0 left-0">
+      <FooterBlock Icon={GitHub} href="https://github.com/PranjalG420" />
+      <FooterBlock Icon={Twitter} href="https://twitter.com/PranjalG420" />
+      <FooterBlock
+        Icon={Linkedin}
+        href="https://www.linkedin.com/in/pranjal-gupta-10a595224/"
+      />
+    </div>
+  );
 }
