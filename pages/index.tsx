@@ -13,11 +13,11 @@ import { useInView } from "react-intersection-observer";
 import Container from "../components/container";
 
 export default function Home({ content }) {
-    const { inView, ref } = useInView();
-    return (
-        <>
-            <span className=" group w-min ">
-                {/* Hover
+  const { inView, ref } = useInView();
+  return (
+    <>
+      <span className=" group w-min ">
+        {/* Hover
                 <h2>{`Header inside viewport ${inView}.`}</h2>
                 <section className="min-h-[100vh]">
                     <p>Second text</p>
@@ -39,8 +39,8 @@ export default function Home({ content }) {
                 <p className="invisible relative top-[200px] group-hover:visible">
                     Text
                 </p> */}
-                <Container title="jope"></Container>
-            </span>
-        </>
-    );
+        <Container title="jope"></Container>
+      </span>
+    </>
+  );
 }
